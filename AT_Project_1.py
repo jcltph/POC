@@ -34,7 +34,8 @@ def compute_in_degrees(digraph):
     computes in degrees for a set of given nodes
     '''
     in_degrees = dict((deg, 0) for deg in digraph)
-    
+    #in_degrees = {deg: 0 for deg in digraph}
+
     for key in digraph:
         for node in digraph[key]:
             in_degrees[node] += 1
