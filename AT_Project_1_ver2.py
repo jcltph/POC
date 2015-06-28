@@ -1,6 +1,6 @@
 '''
 Project 1 - Degree distributions for graphs
-http://www.codeskulptor.org/#user40_Zx0GZgcny6_22.py
+http://www.codeskulptor.org/#user40_ts5AARpzgl_1.py
 '''
 
 EX_GRAPH0 = {0: set([1,2]), 1: set([]),
@@ -33,18 +33,14 @@ def compute_in_degrees(digraph):
     '''
     computes in degrees for a set of given nodes
     '''
-    in_degrees = {}
+    in_degrees = dict((deg, 0) for deg in digraph)
     
-    for node in digraph:
-        temp_in_deg = 0
-        
-        for key in digraph:
-            if (node in digraph[key]):
-                temp_in_deg += 1
-                
-        in_degrees[node] = temp_in_deg
-    
+    for key in digraph:
+        for node in digraph[key]:
+            in_degrees[node] += 1
+
     return in_degrees
+
 
 print compute_in_degrees(EX_GRAPH0)
 
